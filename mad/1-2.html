@@ -1,0 +1,288 @@
+<!--
+	作者：1036795373@qq.com
+	时间：2018-03-09
+	描述：20154071103李庆华2.html
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>jQuery事件</title>
+		<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+	<style type="text/css">
+		article{
+			width: 80%;
+			margin: auto;
+		}
+		.event-test{
+			width: 100%;
+			height: 220px;
+			
+		}
+		.event-test-content{
+			width: 28%;
+			border: 1px solid #cacaca;
+			height: 150px;
+			float: left;
+		}
+		.event-test-code{
+			width: 69%;
+			float: right;
+			
+		}
+	</style>
+	</head>
+<body>
+	<h3>jQuery 事件演示</h3>
+	<article>
+		<!--jQuery click()鼠标单击-->
+		<div class="event-test">
+			<h4>jQuery click()鼠标单击</h4>
+			<div class="event-test-content">
+				<script>
+					$(document).ready(function(){
+					  $(".click").click(function(){
+					    $(this).hide();
+					  });
+					});
+				</script>
+				<p class="click">如果你点我，我就会消失。</p>
+				<p class="click">点我消失!</p>
+				<p class="click">点我也消失!</p>
+			</div>
+			<div class="event-test-code">
+				<textarea style="float: right;width: 100%;height: 145px;">			
+<script>
+$(document).ready(function(){
+  $(".click").click(function(){
+    $(this).hide();
+  });
+});
+</script>
+<p class="click">如果你点我，我就会消失。</p>
+<p class="click">点我消失!</p>
+<p class="click">点我也消失!</p>
+			
+			</textarea>
+			</div>
+		</div>
+		
+		
+		
+		
+		<!--jQuery dblclick()鼠标双击-->
+		<div class="event-test">
+			<h4>jQuery dblclick()鼠标双击</h4>
+			<div class="event-test-content">
+				<script>
+				$(document).ready(function(){
+				  $(".dblclick").dblclick(function(){
+				    $(this).hide();
+				  });
+				});
+				</script>
+				<p class="dblclick">双击鼠标左键的，我就消失。</p>
+				<p class="dblclick">双击我消失！</p>
+				<p class="dblclick">双击我也消失！</p>
+			</div>
+			<div class="event-test-code">
+				<textarea style="float: right;width: 100%;height: 145px;">			
+<script>
+$(document).ready(function(){
+  $(".dblclick").dblclick(function(){
+    $(this).hide();
+  });
+});
+</script>
+<p class="dblclick">双击鼠标左键的，我就消失。</p>
+<p class="dblclick">双击我消失！</p>
+<p class="dblclick">双击我也消失！</p>
+			
+			</textarea>
+			</div>
+		</div>
+		
+		<!--jQuery mouseenter()指针进入-->
+		<div class="event-test">
+			<h4>jQuery mouseenter()指针进入</h4>
+			<div class="event-test-content">
+				<script>
+				$(document).ready(function(){
+				  $("#p1").mouseenter(function(){
+				    alert('您的鼠标移到了 id="p1" 的元素上!');
+				  });
+				});
+				</script>
+				<p id="p1">鼠标指针进入此处，会看到弹窗。</p>
+			</div>
+			<div class="event-test-code">
+				<textarea style="float: right;width: 100%;height: 145px;">			
+<script>
+$(document).ready(function(){
+  $("#p1").mouseenter(function(){
+    alert('您的鼠标移到了 id="p1" 的元素上!');
+  });
+});
+</script>
+<p id="p1">鼠标指针进入此处，会看到弹窗。</p>
+			</textarea>
+			</div>
+		</div>
+		
+		<!--jQuery mouseleave()指针离开-->
+		<div class="event-test">
+			<h4>jQuery mouseleave()指针离开</h4>
+			<div class="event-test-content">
+				<script>
+				$(document).ready(function(){
+				  $("#p2").mouseleave(function(){
+				    alert("再见，您的鼠标离开了该段落。");
+				  });
+				});
+				</script>
+				<p id="p2">鼠标离开此处</p>
+			</div>
+			<div class="event-test-code">
+				<textarea style="float: right;width: 100%;height: 145px;">			
+<script>
+$(document).ready(function(){
+  $("#p2").mouseleave(function(){
+    alert("再见，您的鼠标离开了该段落。");
+  });
+});
+</script>
+<p id="p2">鼠标离开此处</p>
+			</textarea>
+			</div>
+		</div>
+		
+		<!--jQuery mousedown()指针按下-->
+		<div class="event-test">
+			<h4>jQuery mousedown()指针按下</h4>
+			<div class="event-test-content">
+				<script>
+				$(document).ready(function(){
+				  $("#p3").mousedown(function(){
+				    alert("鼠标在该段落上按下！");
+				  });
+				});
+				</script>
+				<p id="p3">在此处按下</p>
+			</div>
+			<div class="event-test-code">
+				<textarea style="float: right;width: 100%;height: 145px;">			
+<script>
+$(document).ready(function(){
+  $("#p3").mousedown(function(){
+    alert("鼠标在该段落上按下！");
+  });
+});
+</script>
+<p id="p3">在此处按下</p>
+			</textarea>
+			</div>
+		</div>
+		
+		<!--jQuery mouseup()指针按下后松开-->
+		<div class="event-test">
+			<h4>jQuery mouseup()指针按下后松开</h4>
+			<div class="event-test-content">
+				<script>
+				$(document).ready(function(){
+				  $("#p4").mouseup(function(){
+				    alert("鼠标在段落上松开。");
+				  });
+				});
+				</script>
+				<p id="p4">在此处按下后松开</p>
+			</div>
+			<div class="event-test-code">
+				<textarea style="float: right;width: 100%;height: 145px;">			
+<script>
+$(document).ready(function(){
+  $("#p4").mouseup(function(){
+    alert("鼠标在段落上松开。");
+  });
+});
+</script>
+<p id="p4">在此处按下后松开</p>
+			</textarea>
+			</div>
+		</div>
+		
+		<!--jQuery hover()指针滑过-->
+		<div class="event-test">
+			<h4>jQuery hover()指针滑过</h4>
+			<div class="event-test-content">
+				<script>
+				$(document).ready(function(){
+				    $("#p5").hover(
+						function(){
+							alert("你进入了 p5!");
+						},
+						function(){
+							alert("拜拜! 现在你离开了 p5!");
+						}
+				    )
+				});
+				</script>
+				<p id="p5">鼠标滑到此处</p>
+			</div>
+			<div class="event-test-code">
+				<textarea style="float: right;width: 100%;height: 145px;">			
+<script>
+$(document).ready(function(){
+    $("#p5").hover(
+		function(){
+			alert("你进入了 p5!");
+		},
+		function(){
+			alert("拜拜! 现在你离开了 p5!");
+		}
+    )
+});
+</script>
+<p id="p5">鼠标滑到此处</p>
+			</textarea>
+			</div>
+		</div>
+		
+		<!--jQuery focus() 和 blur()-->
+		<div class="event-test">
+			<h4>jQuery focus() 和 blur()</h4>
+			<div class="event-test-content">
+				<script>
+				$(document).ready(function(){
+				  $("input").focus(function(){
+				    $(this).css("background-color","#cccccc");
+				  });
+				  $("input").blur(function(){
+				    $(this).css("background-color","#ffffff");
+				  });
+				});
+				</script>
+				Name: <input type="text" name="fullname"><br>
+				Email: <input type="text" name="email">
+			</div>
+			<div class="event-test-code">
+				<textarea style="float: right;width: 100%;height: 145px;">			
+<script>
+$(document).ready(function(){
+  $("input").focus(function(){
+    $(this).css("background-color","#cccccc");
+  });
+  $("input").blur(function(){
+    $(this).css("background-color","#ffffff");
+  });
+});
+</script>
+Name: <input type="text" name="fullname"><br>
+Email: <input type="text" name="email">
+			</textarea>
+			</div>
+		</div>
+		
+		
+	</article>
+</body>
+</html>

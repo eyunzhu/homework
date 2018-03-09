@@ -1,0 +1,177 @@
+<!--
+	作者：1036795373@qq.com
+	时间：2018-03-09
+	描述：20154071103李庆华1.html
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>H5框架</title>
+		<style type="text/css">
+			body{
+				font-size: 18px;
+				line-height: 28px;
+			}
+			article{
+				width: 90%;
+				margin: auto;
+			}
+			
+			article div{
+				text-indent:2em;
+				
+			}
+			
+			ul{
+				margin: 0;
+			}
+			ul li{
+				list-style: none;
+				
+			}
+		</style>
+</head>
+<body>
+	<article>
+	<h1>第一周作业1：H5移动开发相关框架</h1>
+	<h3>一、Bootstrap</h3>
+	<div class="text-content">
+		是一个CSS/HTML框架。Bootstrap提供了优雅的HTML和CSS规范，它即是由动态CSS语言Less写成。
+	</div>
+	bootstrap优点：
+	<ul>
+		<li>
+			1.bootstap最近发布了bootstrap4，拥有了box-flex布局等更新，紧跟最新的web技术的发展
+		</li>
+		<li>
+			2.比较成熟，在大量的项目中充分的使用和测试
+		</li>
+		<li>
+			3.拥有完善的文档，使用起来更方便
+		</li>
+		<li>
+			4.有大量的组件样式，接受定制
+		</li>
+	</ul>
+	bootstrap缺点：
+	<ul>
+		<li>
+			1.如果有自己特殊的需求，就需要重新定制样式，如果一个网站中有大量的非bootstrap“风格”的样式存在，那么你就需要做大量的css重写，因此也就失去了使用框架的意义。
+		</li>
+		<li>
+			2.会有兼容问题，虽然网上存在很多兼容IE的办法，但需要引入其他文件，有些还不小，势必导致加载速度变慢，影响用户体验。
+
+		</li>
+	</ul>
+	
+	<h3>二、Amaze UI</h3>
+	<div class="text-content">
+		 Amaze UI是国内首款Html5开源跨屏前端框架，优秀开源前端框架，拥有丰富的CSS+JS组件。轻量级高性能开源框架，以移动优先（Mobile first）为理念，从小屏逐步扩展到大屏，最终实现所有屏幕适配，适应移动互联潮流；面向 HTML5 开发，使用 CSS3 来做动画交互，平滑、高效，更适合移动设备，让 Web 应用更快速载；含近 20 个 CSS 组件、10 个 JS 组件，更有 17 款包含近 60 个主题的 Web 组件，可快速构建界面出色、体验优秀的跨屏页面，大幅提升开发效率；相比国外框架，Amaze UI 关注中文排版，根据用户代理调整字体，实现更好的中文排版效果；兼顾国内主流浏览器及 App 内置浏览器兼容支持。
+	</div>
+	Amaze UI优缺点：
+	<ul>
+		<li>
+			1.amaze ui在bootstrap美化的基础上，主要增加JS添加了动态，以及更多样式；另外amaze ui侧重于移动优先！
+		</li>
+		<li>
+			2.Amaze UI 总的来说就是加入更多符合中国市场特性的元素，框架对跨屏、适配都做了的比较好的处理并且准备一了一系列的常用的网页组件，为减少搞兼容、适配各种敲键盘的加班狗们的工作时间做了不小的贡献。，框架还对中文排版优化，兼容中国本土主流浏览器、轻量化，不仅适用于桌面端，还更更适合移动端、包含一些封装好的Widgets。但代码和设计上感觉没太多突出的点。
+		</li>		
+	</ul>
+	
+	<h3>三、AUI</h3>
+	<div class="text-content">
+	声称是专为APICloud开发者设计的一套UI框架，但实际它还是解决了很多移动前端开发的普遍问题，是主要面向混合开发的 CSS 框架。	 
+	</div>
+	AUI优缺点：
+	<ul>
+		<li>
+			1.优点就是纯 CSS 框架
+		</li>				
+	</ul>
+	
+	<h3>四、Frozen UI</h3>
+	<div class="text-content">
+	是一个开源的简单易用,轻量快捷的移动端UI框架。基于手Q样式规范,选取最常用的组件, 做成手Q公用离线包减少请求,升级方式友好,文档完善
+	</div>
+	Frozen UI优缺点：
+	<ul>
+		<li>
+			拿 Frozen UI 配合一些如 APICloud 用来做混合 APP感觉就太酷了，或者原生的火鸡们拿去嵌套在应用中做前端开发，这个框架对 android 2.3 +、ios 4.0 + 做了兼容，或者拿来做 Web App 也是极好的选择，劣势的话从 UI 层面就可以看到了，谁让它是出生在QQ会员前端的呢。
+		</li>				
+	</ul>
+	
+	<h3>五、WeUI</h3>
+	<div class="text-content">
+	WeUI和 FrozenUI都属于比较专一的框架，WeUI比FrozenUI更专一，话说连个官网都不搞，所有答疑都在 gitHub Issues 解决了，这个框架极其简单，体积当然就不用说了，模块也就 7 个左右，不过体量小做的却不错，口碑看 star 就够了，框架从 16/1/23 发版至今 github star 超过 7K,
+	</div>
+	WeUI优缺点：
+	<ul>
+		<li>
+		看完微信设计团队设计的这套 DEMO，如果要做微信公众，这个二话不说必然是首选了。框架不好的地方简而言之就是框架本身应该就没考虑过让用户用到非微信的场景之下。	
+		</li>				
+	</ul>
+	
+	<h3>六、SUI</h3>
+	<div class="text-content">
+	“SUI 是一套基于bootstrap开发的前端组件库，同时它也是一套设计规范。通过SUI，可以非常方便的设计和实现精美的页面”。
+	</div>
+	
+	<h3>七、WeUI</h3>
+	<div class="text-content">
+	感觉 UI 上跟 Bootstrap 没太多的区别，不过代码命名规范上却相差甚大，本人认为 Semantic UI 是不是就想做的不一样，它的命名全是采用复合的方式，类名特别的离散，用的时候你得很小心自己扩展或者新增的 class 命名与它的类名冲突。</div>
+	</div>
+	
+	<h3>八、Foundation</h3>
+	<div class="text-content">
+	Foundation 算是框架界的元老啦，都说框架去的早，而这个框架一直到现在依然这么的热门，如果你比较介意 Bootstrap 开发撞脸的尴尬事情，那么你可以考虑使用 Foundation 。即使你使用预定义的 UI 元素, 也不会与其他网站太像，就像官方说的给开发者更灵活的框架体验。
+	</div>
+	
+	<h3>九、UiKit</h3>
+	<div class="text-content">
+	UIkit是YOOtheme团队开发的，在许多WordPress主题中都有应用(也就是如果你是个 WordPress 爱好者，那么这个框架应该比较适合深究)，并且框架能够通过GUI编辑器和手动编辑，所以它提供了一个灵活、强大的自定义机制。框架借助LESS、jQuery、normalize.css及FontAwesome开源项目的独有特点，整合成了这么一款轻量级、模块化的前端框架。
+	</div>
+	
+	<h3>十、Pure</h3>
+	<div class="text-content">
+	框架小巧，并且是纯 CSS，没有太多的牵扯，好用来与其他框架快速结合使用。
+	</div>
+	
+	</article>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<ul>
+		<li>
+			
+		</li>
+		<li>
+			
+		</li>
+		<li>
+			
+		</li>
+		<li>
+			
+		</li>
+	</ul>
+
+</body>
+</html>
