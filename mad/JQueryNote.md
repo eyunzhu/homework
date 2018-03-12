@@ -12,7 +12,7 @@
 
 代码安装：
 ``` html
-    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 ```
 为了防止文档在完全加载（就绪）之前运行 jQuery 代码，所有 jQuery 函数位于一个 document ready 函数中
 (为防止：获得未完全加载的图像的大小，试图隐藏一个不存在的元素，这种没完全加载就执行会出错)
