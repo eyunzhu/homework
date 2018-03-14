@@ -1,0 +1,34 @@
+/*菜单*/
+.menu-box{
+	position: fixed;
+	color: white;
+	right: 20px;
+	top:40px;
+}
+.menu-box a{
+	color: white;
+	text-decoration: none;
+}
+#menu{
+	width: 100px;
+	background: #CACACA;
+	border-radius: 10px;
+	text-align: center;
+	cursor: pointer;
+	font-size: 20px;
+	line-height: 30px;
+	height: 30px;
+	color:  maroon;		
+}
+#menu-li{
+	
+	width: 230px;
+	background: #CACACA;
+	border-radius: 10px;
+	display: none;
+	padding: 2px 2px 10px 2px;
+	margin-top: 5px;
+}
+#menu-li li{
+	margin: 5px 0px;
+}
