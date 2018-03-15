@@ -3,15 +3,19 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>jQuery效果</title>
-				<!--代码高亮js引入开始-->
+		
+		<!--代码高亮js引入开始-->
 		<link href="http://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css" rel="stylesheet">  
-		<script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>  
+		<script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>			
 		<script >hljs.initHighlightingOnLoad();</script>
+		<script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js">
 		<!--代码高亮引入结束-->
 		<script src="http://file.eyunzhu.com/js/include.js"></script>
 		<script src="js/menu.js"></script>
 		<link rel="stylesheet" href="css/menu.css" />
 		<include src="menu.html"></include>
+		
+		
 	</head>
 	<style>
 		body{
@@ -23,19 +27,14 @@
 			margin: auto;
 		}
 		.jqxg-li{
-			border: 1px solid #CACACA;
-			height: 220px;
-		
+			//border: 1px solid #CACACA;
+			
 		}
-		.jqxg-li-ys{
-			width: 50%;
-			float: left;
-			background:  cornflowerblue;
-			padding: 5px 0px;
+		.jqxg-li-ys{			
 		}
 		.jqxg-li-code{
 			width: 48%;			
-			float: right;
+			//float: right;
 			
 		}
 	</style>
@@ -45,27 +44,90 @@
 	<hr/>
 	<article>
 		<div class="jqxg-li">
-			<h4>jQuery 隐藏和显示</h4>
-			
+			<h4>jQuery 隐藏和显示hide() 和 show()、toggle()</h4>
 			<div class="jqxg-li-ys">
-				这是演示区
+				<div id="ys1" style="background: burlywood;">演示区</div>				
+				<button id="hide">hide()</button>
+				<button id="show">show()</button>
+				<button id="toggle">toggle()</button>
+				<script>
+					$(document).ready(function(){
+						$("#hide").click(function(){
+							$("#ys1").hide(1000,function(){alert("ys1隐藏了")});
+						});
+						$("#show").click(function(){
+							$("#ys1").show(1000,function(){alert("ys1出现了")});
+						});
+						$("#toggle").click(function(){
+							$("#ys1").toggle(1000);
+						});
+					});
+				</script>
 			</div>
-			<div class="jqxg-li-code">
-				
+			<div class="jqxg-li-code">				
 				<pre style="margin: 0 0 0 0;">
-				<code class="lang-javascript" style="padding: 0 0 0 0;">
-hide() 和 show()
-//语法
+				<code class="lang-javascript" style="padding: 0px 20px;">//语法
 $(selector).hide(speed,callback);
 $(selector).show(speed,callback);
-				</code>
+$(selector).toggle(speed,callback);
+//代码
+$(document).ready(function(){
+	$("#hide").click(function(){
+		$("#ys1").hide(1000,function(){alert("ys1隐藏了")});
+	});
+	$("#show").click(function(){
+		$("#ys1").show(1000,function(){alert("ys1出现了")});
+	});
+	$("#toggle").click(function(){
+		$("#ys1").toggle(1000);
+	});
+});		</code>
 				</pre>
-			</div>
-				
-			
+			</div>			
 		</div>
-		
-		
+		<hr>
+		<div class="jqxg-li">
+			<h4>jQuery 淡入淡出hide() 和 show()、toggle()</h4>
+			<div class="jqxg-li-ys">
+				<div id="ys1" style="background: burlywood;">演示区</div>				
+				<button id="hide">hide()</button>
+				<button id="show">show()</button>
+				<button id="toggle">toggle()</button>
+				<script>
+					$(document).ready(function(){
+						$("#hide").click(function(){
+							$("#ys1").hide(1000,function(){alert("ys1隐藏了")});
+						});
+						$("#show").click(function(){
+							$("#ys1").show(1000,function(){alert("ys1出现了")});
+						});
+						$("#toggle").click(function(){
+							$("#ys1").toggle(1000);
+						});
+					});
+				</script>
+			</div>
+			<div class="jqxg-li-code">				
+				<pre style="margin: 0 0 0 0;">
+				<code class="lang-javascript" style="padding: 0px 20px;">//语法
+$(selector).hide(speed,callback);
+$(selector).show(speed,callback);
+$(selector).toggle(speed,callback);
+//代码
+$(document).ready(function(){
+	$("#hide").click(function(){
+		$("#ys1").hide(1000,function(){alert("ys1隐藏了")});
+	});
+	$("#show").click(function(){
+		$("#ys1").show(1000,function(){alert("ys1出现了")});
+	});
+	$("#toggle").click(function(){
+		$("#ys1").toggle(1000);
+	});
+});		</code>
+				</pre>
+			</div>			
+		</div>
 	</article>
 	
 	
