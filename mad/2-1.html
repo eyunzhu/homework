@@ -8,12 +8,12 @@
 		<link href="http://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css" rel="stylesheet">  
 		<script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>			
 		<script >hljs.initHighlightingOnLoad();</script>
-		<script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js">
+		<script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
 		<!--代码高亮引入结束-->
 		<script src="http://file.eyunzhu.com/js/include.js"></script>
 		<script src="js/menu.js"></script>
 		<link rel="stylesheet" href="css/menu.css" />
-		<include src="menu.html"></include>
+		<!--<include src="menu.html"></include>-->
 		
 		
 	</head>
@@ -30,15 +30,166 @@
 			//border: 1px solid #CACACA;
 			
 		}
-		.jqxg-li-ys{			
+		.jqxg-li-ys{		
 		}
 		.jqxg-li-code{
-			width: 48%;			
-			//float: right;
-			
+						
 		}
 	</style>
 <body id="bgcolor">
+		<meta charset="UTF-8">			
+	<style type="text/css">
+		#eyunzhu_left_bar{			
+			height: 300px;
+			width: 150px;
+			position: fixed;
+			right: 1px;
+			top: 300px;
+			z-index: 999;
+		}
+		#float_box{
+			width: 90px;
+			height: 140px;
+			position: fixed;
+			right: 40px;
+    		top: 300px;    		
+    		z-index: 999;
+    		
+			text-align: center;			
+			border:solid 1px #CACACA;
+			border-radius: 5%;
+			
+			font-size: 10px;			
+			padding-top: 5px;
+		}
+		#float_box img{
+			width: 80px;
+			height: 80px;
+			padding-top: 5px;
+		}
+		#float_box button{
+			
+			background-color:#f40;
+			border: none;
+			border-radius: 15%;		
+			padding: 2px 10px;
+			
+		}
+		#left_box{
+			position: fixed;
+			z-index: 999;
+			right:10px;
+			margin-left: 10px;
+			width: 20px;
+			height: 120px;
+		}
+		#left_box #li_a,
+		#left_box #li_b,
+		#left_box #li_c,
+		#left_box #li_d{
+			border: 1px solid #CACACA;
+			width: 18px;
+			margin-top: 5px;
+			font-size: 12px;
+			text-align: center;
+			cursor:pointer;
+			
+		}
+	#left_box #li_a:target{
+		display: none;
+	}
+	li{
+		list-style: none;
+	}
+	a{
+		text-decoration: none;
+		color: black;
+	}
+	</style>
+	<script>
+		function f(ids){
+			document.getElementById(ids).style.display="none";
+		}
+		/* 函数名：isdisplay
+		 * 参数：id 
+		 * 功能：显示、隐藏div		 * 
+		 */
+		function isdisplay(id){
+			if(document.getElementById(id).style.display=="block")
+				document.getElementById(id).style.display="none";
+			else
+				document.getElementById(id).style.display="block";
+		}
+		function changeColor(){ 
+			var color="#f00|#0f0|#00f|#880|#808|#088|yellow|green|blue|gray"; 
+			color=color.split("|"); 
+			document.getElementById("li_a").style.color=color[parseInt(Math.random() * color.length)]; 
+		} 
+		setInterval("changeColor()",200); 
+	</script> 
+	<script type="text/javascript">
+
+    function lingquan(){    	
+       window.location.href="http://tb.eyunzhu.com";
+    }
+    function zhuji(){    	
+       window.location.href="http://host.eyunzhu.com";
+    }
+    function weixin(){
+    	isdisplay("float_box");        
+    }	
+    function guanbi(){    	    	
+       document.getElementById("eyunzhu_left_bar").style.display="none";
+    }	
+</script>
+	</head>	
+	<body style="">
+	<div id="eyunzhu_left_bar">
+		<div id="left_box">
+			
+			<div id="li_a" onclick=lingquan(); >
+				领券
+			</div>
+			<div id="li_b" onclick=zhuji();>
+				主机
+			</div>
+			<div id="li_c" onclick=weixin();>
+				微信
+			</div>
+			<div id="li_d" onclick=guanbi();>
+				X
+			</div>
+		</div>	
+		<div id="float_box" >
+				更多关注公众号
+				<img src="http://video.eyunzhu.com/gzh.jpg" />
+				<button onclick=window.location.href="https://jq.qq.com/?_wv=1027&k=53gR5Qq";>加QQ群</button>
+				<form id="time_area"  > 
+					<span id="time_text"></span>秒后消失
+				</form> 
+		</div>	
+	</div>
+	
+	
+<script type="text/javascript">  
+//设定倒数秒数  
+var t = 5;  
+//显示倒数秒数  
+function showTime(){  
+    t -= 1;  
+    document.getElementById('time_text').innerHTML= t;  
+    if(t==0){  
+    	
+    	document.getElementById("time_area").style.display="none";
+    	document.getElementById("float_box").style.display="none";
+       stop();        
+    }  
+    //每秒执行一次,showTime()  
+    setTimeout("showTime()",1000);  
+}    
+//执行showTime()  
+showTime();  
+</script>  
 	<br />
 	<h3>jQuery效果</h3>
 	<hr/>
@@ -46,20 +197,20 @@
 		<div class="jqxg-li">
 			<h4>jQuery 隐藏和显示hide() 和 show()、toggle()</h4>
 			<div class="jqxg-li-ys">
-				<div id="ys1" style="background: burlywood;">演示区</div>				
-				<button id="hide">hide()</button>
-				<button id="show">show()</button>
-				<button id="toggle">toggle()</button>
+				<div id="ys1" style="background: burlywood;">点击下方按钮操作右侧广告显示状态</div>				
+				<button id="button11">hide()</button>
+				<button id="button12">show()</button>
+				<button id="button13">toggle()</button>
 				<script>
 					$(document).ready(function(){
-						$("#hide").click(function(){
-							$("#ys1").hide(1000,function(){alert("ys1隐藏了")});
+						$("#button11").click(function(){
+							$("#eyunzhu_left_bar").hide(1000,function(){alert("广告已经关闭")});
 						});
-						$("#show").click(function(){
-							$("#ys1").show(1000,function(){alert("ys1出现了")});
+						$("#button12").click(function(){
+							$("#eyunzhu_left_bar").show(1000,function(){alert("广告打开")});
 						});
-						$("#toggle").click(function(){
-							$("#ys1").toggle(1000);
+						$("#button13").click(function(){
+							$("#eyunzhu_left_bar").toggle(1000);
 						});
 					});
 				</script>
@@ -87,22 +238,36 @@ $(document).ready(function(){
 		</div>
 		<hr>
 		<div class="jqxg-li">
-			<h4>jQuery 淡入淡出hide() 和 show()、toggle()</h4>
+			<h4>jQuery 淡入淡出fadeIn() 和 fadeOut()、fadeToggle()、fadeTo()</h4>
 			<div class="jqxg-li-ys">
-				<div id="ys1" style="background: burlywood;">演示区</div>				
-				<button id="hide">hide()</button>
-				<button id="show">show()</button>
-				<button id="toggle">toggle()</button>
+				<div id="ys2" style="background: burlywood;">
+					<div>
+						<div >菜单</div>
+						<ul id="ys2-menu" style="display: none;">
+							<a href="http://eyunzhu.com" target="_blank"><li>博客</li></a>
+							<a href="http://github.com/eyunzhu" target="_blank"><li>github</li></a>
+							<a href="http://forum.eyunzhu.com" target="_blank"><li>论坛</li></a>
+						</ul>
+					</div>
+				</div>				
+				<button id="button21">fadeIn()</button>
+				<button id="button22">fadeOut()</button>
+				<button id="button23">fadeToggle()</button>
+				<button id="button24">fadeTo()</button>
 				<script>
 					$(document).ready(function(){
-						$("#hide").click(function(){
-							$("#ys1").hide(1000,function(){alert("ys1隐藏了")});
+						$("#button21").click(function(){
+							$("#ys2-menu").fadeIn(500);
+							//$("#ys2-menu").hide(1000,function(){alert("ys1隐藏了")});
 						});
-						$("#show").click(function(){
-							$("#ys1").show(1000,function(){alert("ys1出现了")});
+						$("#button22").click(function(){
+							$("#ys2-menu").fadeOut(500);
 						});
-						$("#toggle").click(function(){
-							$("#ys1").toggle(1000);
+						$("#button23").click(function(){
+							$("#ys2-menu").fadeToggle(500);
+						});
+						$("#button24").click(function(){
+							$("#ys2").fadeTo("",0.3);
 						});
 					});
 				</script>
@@ -110,21 +275,65 @@ $(document).ready(function(){
 			<div class="jqxg-li-code">				
 				<pre style="margin: 0 0 0 0;">
 				<code class="lang-javascript" style="padding: 0px 20px;">//语法
-$(selector).hide(speed,callback);
-$(selector).show(speed,callback);
-$(selector).toggle(speed,callback);
-//代码
-$(document).ready(function(){
-	$("#hide").click(function(){
-		$("#ys1").hide(1000,function(){alert("ys1隐藏了")});
-	});
-	$("#show").click(function(){
-		$("#ys1").show(1000,function(){alert("ys1出现了")});
-	});
-	$("#toggle").click(function(){
-		$("#ys1").toggle(1000);
-	});
-});		</code>
+//fadeIn() 用于淡入已隐藏的元素
+$(selector).fadeIn(speed,callback);
+//fadeOut() 方法用于淡出可见元素
+$(selector).fadeOut(speed,callback);
+//fadeToggle() 方法可以在 fadeIn() 与 fadeOut() 方法之间进行切换
+$(selector).fadeToggle(speed,callback);
+//fadeTo() 方法允许渐变为给定的不透明度（值介于 0 与 1 之间）。
+$(selector).fadeTo(speed,opacity,callback);
+/*实例*/
+$("#ys2-menu").fadeToggle(500);
+	</code>
+				</pre>
+			</div>			
+		</div>
+		
+		
+		<div class="jqxg-li">
+			<h4>jQuery 滑动 slideDown() slideUp() slideToggle()</h4>
+			<div class="jqxg-li-ys">
+				<div id="ys3" style="background: burlywood;">
+					<div>
+						<div >菜单</div>
+						<ul id="ys3-menu" style="display: none;">
+							<a href="http://eyunzhu.com" target="_blank"><li>博客</li></a>
+							<a href="http://github.com/eyunzhu" target="_blank"><li>github</li></a>
+							<a href="http://forum.eyunzhu.com" target="_blank"><li>论坛</li></a>
+						</ul>
+					</div>
+				</div>				
+				<button id="button21">fadeIn()</button>
+				<button id="button22">fadeOut()</button>
+				<button id="button23">fadeToggle()</button>
+				<button id="button24">fadeTo()</button>
+				<script>
+					$(document).ready(function(){
+						$("#button21").click(function(){
+							$("#ys2-menu").fadeIn(500);
+							//$("#ys2-menu").hide(1000,function(){alert("ys1隐藏了")});
+						});
+						$("#button22").click(function(){
+							$("#ys2-menu").fadeOut(500);
+						});
+						$("#button23").click(function(){
+							$("#ys2-menu").fadeToggle(500);
+						});
+						$("#button24").click(function(){
+							$("#ys2").fadeTo("",0.3);
+						});
+					});
+				</script>
+			</div>
+			<div class="jqxg-li-code">				
+				<pre style="margin: 0 0 0 0;">
+				<code class="lang-javascript" style="padding: 0px 20px;">//语法
+/*slideDown() 方法用于向下滑动元素
+* slideUp() 方法用于向上滑动元素。
+* slideToggle() 方法可以在 slideDown() 与 slideUp() 方法之间进行切换。
+
+*</code>
 				</pre>
 			</div>			
 		</div>
