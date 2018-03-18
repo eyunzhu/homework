@@ -10,7 +10,7 @@
 		<script >hljs.initHighlightingOnLoad();</script>
 		<script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
 		<!--代码高亮引入结束-->
-		<script src="http://file.eyunzhu.com/js/include.js"></script>
+		<!--<script src="http://file.eyunzhu.com/js/include.js"></script>-->
 		<script src="js/menu.js"></script>
 		<link rel="stylesheet" href="css/menu.css" />
 		<!--<include src="menu.html"></include>-->
@@ -195,7 +195,7 @@ showTime();
 	<hr/>
 	<article>
 		<div class="jqxg-li">
-			<h4>jQuery 隐藏和显示hide() 和 show()、toggle()</h4>
+			<h4>1.jQuery 隐藏和显示hide() 和 show()、toggle()</h4>
 			<div class="jqxg-li-ys">
 				<div id="ys1" style="background: burlywood;">点击下方按钮操作右侧广告显示状态</div>				
 				<button id="button11">hide()</button>
@@ -238,7 +238,7 @@ $(document).ready(function(){
 		</div>
 		<hr>
 		<div class="jqxg-li">
-			<h4>jQuery 淡入淡出fadeIn() 和 fadeOut()、fadeToggle()、fadeTo()</h4>
+			<h4>2.jQuery 淡入淡出fadeIn() 和 fadeOut()、fadeToggle()、fadeTo()</h4>
 			<div class="jqxg-li-ys">
 				<div id="ys2" style="background: burlywood;">
 					<div>
@@ -292,7 +292,7 @@ $("#ys2-menu").fadeToggle(500);
 		
 		
 		<div class="jqxg-li">
-			<h4>jQuery 滑动 slideDown() slideUp() slideToggle()</h4>
+			<h4>3.jQuery 滑动 slideDown() slideUp() slideToggle()</h4>
 			<div class="jqxg-li-ys">
 				<div id="ys3" style="background: burlywood;">
 					<div>
@@ -304,25 +304,21 @@ $("#ys2-menu").fadeToggle(500);
 						</ul>
 					</div>
 				</div>				
-				<button id="button21">fadeIn()</button>
-				<button id="button22">fadeOut()</button>
-				<button id="button23">fadeToggle()</button>
-				<button id="button24">fadeTo()</button>
+				<button id="butto31">slideDown()</button>
+				<button id="button32">slideUp()</button>
+				<button id="button33">slideToggle()</button>
 				<script>
 					$(document).ready(function(){
-						$("#button21").click(function(){
-							$("#ys2-menu").fadeIn(500);
-							//$("#ys2-menu").hide(1000,function(){alert("ys1隐藏了")});
+						$("#butto31").click(function(){
+							$("#ys3-menu").slideDown("slow");
 						});
-						$("#button22").click(function(){
-							$("#ys2-menu").fadeOut(500);
+						$("#button32").click(function(){
+							$("#ys3-menu").slideUp("slow");
 						});
-						$("#button23").click(function(){
-							$("#ys2-menu").fadeToggle(500);
+						$("#button33").click(function(){
+							$("#ys3-menu").slideToggle("slow");
 						});
-						$("#button24").click(function(){
-							$("#ys2").fadeTo("",0.3);
-						});
+						
 					});
 				</script>
 			</div>
@@ -332,11 +328,57 @@ $("#ys2-menu").fadeToggle(500);
 /*slideDown() 方法用于向下滑动元素
 * slideUp() 方法用于向上滑动元素。
 * slideToggle() 方法可以在 slideDown() 与 slideUp() 方法之间进行切换。
-
+//语法
+$(selector).slideUp(speed,callback);
 *</code>
 				</pre>
 			</div>			
 		</div>
+		
+		<div class="jqxg-li">
+			<h4>4.jQuery 动画 animate() stop() 链(Chaining)</h4>
+			<div class="jqxg-li-ys">
+				<div id="ys4" style="background: burlywood;">
+					<div style="width: 100%;height: 300px;">						
+						<img id="ys4-img" style="position: relative;left:200px" src="http://t.cn/Rnqk5hD" height="300px">
+						
+					</div>
+				</div>				
+				<button id="butto41">animate()</button>
+				<!--<button id="butto42">stop()</button>-->
+				<script>
+					$(document).ready(function(){
+						$("#butto41").click(function(){
+							$("#ys4-img").animate({height:'300px',opacity:'0.4'},"slow")
+										 .animate({height:'100px',opacity:'0.4'},"slow") 
+										 .animate({height:'100px',opacity:'0.4'},"slow")
+										 .animate({left:'450px',top:'-400px',opacity:'0.4'},"slow")
+										 .animate({left:'0px',top:'50px',opacity:'1',height:'700px'},"slow");
+						});
+						/*$("#butto42").click(function(){
+						    $("#ys4-img").stop();
+						  });*/
+												
+					});
+				</script>
+			</div>
+			<div class="jqxg-li-code">				
+				<pre style="margin: 0 0 0 0;">
+				<code class="lang-javascript" style="padding: 0px 20px;">//语法
+$(selector).animate({params},speed,callback);
+//jQuery - 链(Chaining)
+$("#ys4-img").animate({height:'300px',opacity:'0.4'},"slow")
+										 .animate({height:'100px',opacity:'0.4'},"slow") 
+										 .animate({height:'100px',opacity:'0.4'},"slow")
+										 .animate({left:'450px',top:'-400px',opacity:'0.4'},"slow")
+										 .animate({left:'0px',top:'50px',opacity:'1',height:'700px'},"slow");
+*</code>
+				</pre>
+			</div>			
+		</div>
+		
+		
+		
 	</article>
 	
 	
