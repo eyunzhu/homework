@@ -4,3 +4,6 @@
 - 第一周
 	1. [H5移动开发框架](./mad/1-1.html)
 	2. [jQuery事件集合](./mad/1-2.html)
+
+- 第二周
+	1. [jquery效果](./mad/2-1.html)
