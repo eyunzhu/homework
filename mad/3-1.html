@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>JQuery HTML</title>
+<script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+<style>
+body{
+	width: 90%;
+	margin: auto;
+}
+.dome-li{
+	width: 90%;
+	margin: auto;
+}
+.dome-li-code{
+	background: black;
+	color: white;
+}
+.dome-li-content{
+	border: 1px #CACACA solid;
+	padding: 0 10px;
+}
+.dome-li-content-box{
+	border: 1px solid #CACACA;
+	border-radius: 10px;
+	padding: 20px 8px 8px 8px;
+	position: fixed;
+	left: 25%;
+	top: 30%;
+	height: 50%;
+	width: 50%;	
+	background-color: rgba(100,149,237,1);
+	display: none;
+	
+}
+.dome-li-content-box-x{
+	width: 20px;
+	height: 20px;
+	text-align: center;
+	border-radius: 50%;
+	background: #CACACA;
+	position: absolute;	
+	top: 2px;
+	right: 3px;
+	color: white;
+	cursor: pointer;
+}
+red{
+	color: red;
+}
+/*代码示例*/
+codeex{
+	background-color: blueviolet;
+	padding: 0px 5px;
+}
+.toggleclass{
+	color: red;
+}
+</style>
+<script>
+	$(document).ready(function(){
+		var width=$(".dome-li-content-box").width();
+		var height=$(".dome-li-content-box").height();
+		$("#dome-li-content-width").text(width);
+		$("#dome-li-content-height").text(height);
+		$(".dome-li-content-box-x").click(function(){
+			$(".dome-li-content-box").hide();
+		});
+		$("#but-ys").click(function(){
+			$(".dome-li-content-box").toggle(500);
+		});
+		
+		$("#but-text").click(function(){
+			alert ($("#div1").text());
+		});
+		$("#but-html").click(function(){
+			alert ($("#div1").html());
+		});
+		
+		$("#but-text-c").click(function(){
+			$("#div1").text("改变内容");
+		});
+		$("#but-html-c").click(function(){
+			$("#div1").html("<red>改变内容</red>");
+		});
+		
+		$("#but-val").click(function(){
+			alert($("#input1").val());
+		});
+		$("#but-val-c").click(function(){
+			$("#input1").val("#cacaca");
+		});
+		
+		$("#set-bgcolor").click(function(){
+			$("#input1").css({"background-color":$("#input1").val()});
+		});
+		
+		$("#but-attr").click(function(){
+			$("#href-eyunzhu").attr("href","http://github.com/eyunzhu");
+		});
+		
+		$("#but-after").click(function(){
+			$("#href-eyunzhu").after("之后");
+		});
+		$("#but-before").click(function(){
+			$("#href-eyunzhu").before("之前");
+		});
+		
+		
+		$("#but-remove").click(function(){
+			$(".dome-li-content-box-x").remove();
+		});
+		$("#but-empty").click(function(){
+			$(".dome-li-content-box").empty();
+		});
+		
+		$("#but-toggleClass").click(function(){
+			$("#toggleClass-test").toggleClass("toggleclass");
+		});
+		
+	});
+</script>
+	</head>
+<body>
+	
+	<h3>jQuery HTML</h3>
+	<button id="but-ys">演示</button>
+	<hr/>
+<article>
+	<div class="dome-li">
+		<h4>获取内容和属性</h4>
+		<div class="dome-li-code">
+<pre>	
+<red>//获得内容  设置内容</red>
+text() - 设置或返回所选元素的文本内容
+html() - 设置或返回所选元素的内容（包括 HTML 标记）
+val() - 设置或返回表单字段的值
+	<codeex>alert ($("#div1").html());</codeex>
+	<codeex>$("#div1").text("改变内容");</codeex>
+<red>//设置属性 - attr()</red>
+	<codeex>$("#href-eyunzhu").attr("href","http://github.com/eyunzhu");</codeex>
+<red>//添加元素</red>
+append() - 在被选元素的结尾插入内容
+prepend() - 在被选元素的开头插入内容
+after() - 在被选元素之后插入内容
+before() - 在被选元素之前插入内容
+	<codeex>$("#href-eyunzhu").after("之后");</codeex>
+<red>//删除元素</red>
+remove() - 删除被选元素（及其子元素）
+empty() - 从被选元素中删除子元素
+	<codeex>$("#href-eyunzhu").remove();</codeex>
+	remove() 方法也可接受一个参数，允许您对被删元素进行过滤。
+下面的例子删除 class="italic" 的所有 &lt;p&gt; 元素：
+	<codeex>$("p").remove(".italic");</codeex>
+<red>//获取并设置 CSS 类</red>
+addClass() - 向被选元素添加一个或多个类
+removeClass() - 从被选元素删除一个或多个类
+toggleClass() - 对被选元素进行添加/删除类的切换操作
+css() - 设置或返回样式属性
+<br /><br />
+</pre>
+		</div>
+		<div class="dome-li-content">
+			<div class="dome-li-content-box">
+				<div class="dome-li-content-box-x">x</div>
+				悬浮框尺寸：
+				<span id="dome-li-content-width"></span>*
+				<span id="dome-li-content-height"></span>
+				(改变请刷新)
+				<div id="div1"><span>This is div1</span></div>
+				<button id="but-text">$("#div1").text()</button>
+				<button id="but-html">$("#div1").html()</button><br />
+				<button id="but-text-c">$("#div1").text("改变内容")</button>
+				<button id="but-html-c">$("#div1").html("&lt;red&gt;改变内容&lt;/red &gt;")</button><br />
+				<br />
+				<input id="input1" value="red" />
+				<button id="set-bgcolor">设置背景</button>
+				<button id="but-val">$("#input1").val()</button>
+				<button id="but-val-c">$("#input1").val("#cacaca")</button><br />
+				<br />
+				<a id="href-eyunzhu" href="http://eyunzhu.com">eyunzhu</a>
+				<button id="but-attr">改变链接</button>
+				<button id="but-before">before</button>
+				<button id="but-after">before</button><br />
+				<button id="but-remove">$(".dome-li-content-box-x").remove();</button>
+				<button id="but-empty">$(".dome-li-content-box").empty();</button><br />
+				<br />
+				<span id="toggleClass-test">hello</span>
+				<button id="but-toggleClass">toggleClass()</button>
+				
+			</div>
+		</div>
+		
+		
+	</div>
+	
+	
+</article>
+</body>
+</html>

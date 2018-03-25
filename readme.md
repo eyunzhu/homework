@@ -7,3 +7,6 @@
 
 - 第二周
 	1. [jquery效果](./mad/2-1.html)
+
+- 第三周
+	1. [JQuery HTML](./mad/3-1.html)
