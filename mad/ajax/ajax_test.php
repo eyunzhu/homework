@@ -1,8 +1,10 @@
-<meta charset="utf-8" />
+
 <?php
-	$conn=mysqli_connect('localhost','root','root','4zu')or('error');
-	mysqli_query($conn,'use names utf8');
-	$result=mysqli_query($conn,"select * from user");
+	
+	header("content-type:text/html;charset=utf8");
+	$conn=mysqli_connect('localhost','root','root','test')or('error');
+	mysqli_query($conn,'set names utf8');
+	$result=mysqli_query($conn,"select * from test");
 	while($row=mysqli_fetch_array($result)){
 		echo $row['username']."<br />";
 	}
