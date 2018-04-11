@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+<link rel="stylesheet" href="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script src="https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<script>
+	$(document).ready(function(){
+	var html="<div class=\"content-box\" style=\"font-size: 24px;background: #666666;opacity:0.5;border-radius: 10px;position: fixed;";
+	html=html+"	color: white;z-index: 9999;left: 25%;top: 30%;height: 10%;width: 20%;padding: 5% 8% 8% 8%;\">";	
+	html=html+"<div class=\"content-box-x\" style=\"width: 20px;height: 20px;text-align: center;border-radius: 50%;";
+	html=html+"background: #CACACA;position: absolute;	top: 2px;right: 3px;color: white;cursor: pointer;";
+	html=html+"\">X</div><p>为使得体验更佳</P>请使用手机或小于500px的窗口访问本页面</div>";
+	$(Window).width();
+	//alert($(Window).width());
+	if($(Window).width()>620)
+	  $("#windowWidth").html(html);
+	$(".content-box-x").click(function(){
+			$(".content-box").hide();
+		});
+	  
+	});
+</script>
+
+<body>
+
+<div data-role="page" id="home">
+  <div data-role="header">
+    <a href="#aboutPanel" class="ui-btn ui-corner-all ui-shadow ui-icon-info ui-btn-icon-left" >关于</a>
+    <h1>eyunzhu</h1>
+    <a href="#iframe"  data-rel="popup"class="ui-btn ui-corner-all ui-shadow ui-icon-star ui-btn-icon-left" data-transition="flow" data-position-to="window">博客</a>
+  </div>
+  <!--关于面板start-->
+  <div data-role="panel" id="aboutPanel"> 
+  	<br />
+  	<img src="http://eyunzhu.com/wp-content/uploads/2017/10/logo.png" />
+    <h2>eyunzhu Mobile</h2>
+    <p>本网站页面使用jQueryMobile前端开发框架开发</p>
+    
+  </div> 
+  <!--关于面板end-->
+
+  <div data-role="popup" id="iframe" class="ui-content" style="width: 300px;height: 400px;"> 
+  		<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">关闭</a>
+      	<iframe width="100%" height="100%" src="http://eyunzhu.com/" frameborder="0"></iframe>      
+   </div>
+   
+	
+  <div data-role="main" class="ui-content">
+  	<!--公告 start-->
+  	<a href="#myPopup" data-rel="popup" class="ui-btn ui-icon-audio ui-btn-icon-left "  data-transition="flow" data-position-to="window">公告</a>
+  	<div data-role="popup" id="myPopup" class="ui-content">
+      <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">关闭</a>
+       <p style="text-align: center;">welcome to eyunzhu</p>
+      <p><b>提示:</b> 看电影到免费VIP影视网</p>
+    </div>
+    <!--公告 end-->
+ 	<div id="windowWidth"></div><br /><br /><br />
+    <h1 style="text-align: center;">敬请期待！</h1>
+  </div>
+
+   <div data-role="footer" data-position="fixed" data-fullscreen="true">
+    <div data-role="navbar" >
+	  <ul>
+	  	<li><a href="#home" data-icon="home">首页</a></li>        
+	    <li><a href="#comment" data-icon="comment" data-transition="fade">社区</a></li>
+	    <li><a href="#grid" data-icon="grid" data-transition="flip">更多</a></li>
+	    <li><a href="#user" data-icon="user" data-transition="flow">资料</a></li>
+	  </ul>    
+	</div>
+  </div>
+</div> 
+
+<div data-role="page" id="comment">
+  <div data-role="header">
+     <h1>社区</h1>
+     <!--<a href="#iframe" data-rel="popup" class="ui-btn ui-btn-right ui-corner-all ui-shadow ui-icon-star ui-btn-icon-left">主页</a>-->
+  </div>
+  	
+  <div data-role="main" class="ui-content">
+  	<table data-role="table" data-mode="columntoggle" class="ui-responsive" id="myTable" border="1px" data-column-btn-text="选择显示">
+      <thead>
+        <tr>
+          <th data-priority="1">社区编号</th>
+          <th data-priority="1">社区标签</th>
+          <th data-priority="1">社区人数</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>JAVA Javaweb</td>
+          <td>1205</td>
+          
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>C C++ C#</td>
+          <td>324</td>
+         
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>python</td>
+          <td>452</td>
+          
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>php</td>
+          <td>634</td>
+          
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+   <div data-role="footer" data-position="fixed" data-fullscreen="true">
+    <div data-role="navbar" >
+	  <ul>
+	  	<li><a href="#home" data-icon="home">首页</a></li>        
+	    <li><a href="#comment" data-icon="comment" data-transition="fade">社区</a></li>
+	    <li><a href="#grid" data-icon="grid" data-transition="flip">更多</a></li>
+	    <li><a href="#user" data-icon="user" data-transition="flow">资料</a></li>
+	  </ul>    
+	</div>
+  </div>
+</div>
+
+<div data-role="page" id="grid">
+  <div data-role="header">    
+    <h1>更多</h1>    
+  </div>  
+	
+  <div data-role="main" class="ui-content">
+  	
+    <form class="ui-filterable">
+    	<p style="text-align: center;"><b>我的网站:</b>关键词搜索</p>
+      <input id="myFilter" data-type="search">
+    </form>
+    <ul data-role="listview" data-filter="true" data-input="#myFilter" data-autodividers="true" data-inset="true">
+      <li data-filtertext="eyunzhu 博客 教程"><a href="http://eyunzhu.com" target="_blank">eyunzhu.com 博客</a></li>
+      <li data-filtertext="github 代码库"><a href="http://github.com/eyunzhu" target="_blank">github.com/eyunzhu 代码库</a></li>
+      <li data-filtertext="电影 video 影视"><a href="http://video.eyunzhu.com" target="_blank">video.eyunzhu.com 影视</a></li>
+      <li data-filtertext="游戏 games "><a href="http://games.eyunzhu.com" target="_blank">games.eyunzhu.com 游戏</a></li>
+      <li data-filtertext="音乐 music 歌曲"><a href="http://music.eyunzhu.com" target="_blank">music.eyunzhu.com 音乐</a></li>
+      <li data-filtertext="主机 host 服务器 空间"><a href="http://host.eyunzhu.com" target="_blank">host.eyunzhu.com 主机空间</a></li>
+    </ul>
+  </div>
+  
+   <div data-role="footer" data-position="fixed" data-fullscreen="true">
+    <div data-role="navbar" >
+	  <ul>
+	  	<li><a href="#home" data-icon="home">首页</a></li>        
+	    <li><a href="#comment" data-icon="comment" data-transition="fade">社区</a></li>
+	    <li><a href="#grid" data-icon="grid" data-transition="flip">更多</a></li>
+	    <li><a href="#user" data-icon="user" data-transition="flow">资料</a></li>
+	  </ul>    
+	</div>
+  </div>
+</div>
+
+<div data-role="page" id="user">
+  <div data-role="header">
+    <h1>资料</h1>
+    </div>
+  
+	
+  <div data-role="main" class="ui-content" style="text-align: center;">
+  	<div style="width: 90%;margin-left: 5%;"><br />
+  		<img src="http://q1.qlogo.cn/g?b=qq&nk=1036795373&s=100" style="border-radius: 50%;"/>
+  		<p >eyunzhu</p>
+  		<hr /><br />  		
+  	</div>
+  	<div style="float: left;margin: 0px 5%;">我的资料 	</div>
+  	<p ></p><br />
+  	<div data-role="collapsible" data-iconpos="right" >
+      <h1>教育经历</h1>
+      <p>我是可折叠的内容。</p>
+	</div>
+	<div data-role="collapsible" data-iconpos="right" >
+      <h1>个人项目</h1>
+      <p>我是可折叠的内容。</p>
+	</div>
+	<div data-role="collapsible" data-iconpos="right" >
+      <h1>工作经历</h1>
+      <p>我是可折叠的内容。</p>
+	</div>
+    
+  </div>
+
+   <div data-role="footer" data-position="fixed" data-fullscreen="true">
+    <div data-role="navbar" >
+	  <ul>
+	  	<li><a href="#home" data-icon="home">首页</a></li>        
+	    <li><a href="#comment" data-icon="comment" data-transition="fade">社区</a></li>
+	    <li><a href="#grid" data-icon="grid" data-transition="flip">更多</a></li>
+	    <li><a href="#user" data-icon="user" data-transition="flow">资料</a></li>
+	  </ul>    
+	</div>
+  </div>
+</div>
+
+
+</body>
+</html>

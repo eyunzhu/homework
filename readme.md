@@ -11,5 +11,6 @@
 - 第三周
 	1. [JQuery HTML](./mad/JQuery/3-1.html)
 
+	1.[JQuery Mobile](./mad/jQueryMobile/1.html)
 ####示例：
 [ajax 示例](./mad/ajax)
