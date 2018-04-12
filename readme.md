@@ -13,5 +13,5 @@
 
 	1.[JQuery Mobile](./mad/jQueryMobile/1.html)
 
-####示例：
-[ajax 示例](./mad/ajax)
+#### 其他：
+- [ajax ](./mad/ajax)

@@ -1,4 +1,5 @@
 ## ajax
+- [jqueryAjax](./jqueryAjax/readme.md)
 #### 1.创建 XMLHttpRequest 对象
 ``` 
 var xmlhttp;
