@@ -6,6 +6,29 @@
 <script src="https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 </head>
+<style>
+	.article-li{
+		width: 100%; 
+		height: 90px;
+		margin-bottom: 20px;
+		border:1px solid #CACACA;
+	}
+	.article-li img{
+		width: 80px;
+		float: left;
+	}
+	.article-li-text{
+		width:70%;
+		height: 85px ;
+		float: right; 
+		overflow: hidden;
+		font-size: 14px; 
+	}
+	.article-li-text p{
+		margin:5px 0px;
+		font-size: 17px;
+	}
+</style>
 <script>
 	$(document).ready(function(){
 	var html="<div class=\"content-box\" style=\"font-size: 24px;background: #666666;opacity:0.5;border-radius: 10px;position: fixed;";
@@ -20,25 +43,37 @@
 	$(".content-box-x").click(function(){
 			$(".content-box").hide();
 		});
+		
+	$("#themeSwitch").change(function(){		
+		var theme=$("#themeSwitch").val();
+		if(theme=="on")
+			$("#home").attr("data-theme","b");
+		else
+			$("#home").attr("data-theme","a");
+	});
 	  
 	});
 </script>
 
-<body>
+<body >
 
-<div data-role="page" id="home">
-  <div data-role="header">
+<div data-role="page" id="home" data-theme="a">
+  <div data-role="header" data-position="fixed" data-fullscreen="true">
     <a href="#aboutPanel" class="ui-btn ui-corner-all ui-shadow ui-icon-info ui-btn-icon-left" >关于</a>
     <h1>eyunzhu</h1>
     <a href="#iframe"  data-rel="popup"class="ui-btn ui-corner-all ui-shadow ui-icon-star ui-btn-icon-left" data-transition="flow" data-position-to="window">博客</a>
-  </div>
+  </div><br /><br />
   <!--关于面板start-->
   <div data-role="panel" id="aboutPanel"> 
   	<br />
   	<img src="http://eyunzhu.com/wp-content/uploads/2017/10/logo.png" />
     <h2>eyunzhu Mobile</h2>
     <p>本网站页面使用jQueryMobile前端开发框架开发</p>
-    
+    <label for="themeSwitch" style="float: left; line-height: 50px;height: 50px;padding-right: 40px;">夜间模式:</label>
+    <select name="themeSwitch" id="themeSwitch" data-role="slider"  data-inline="true" >
+      <option value="on">On</option>
+      <option value="off" selected>Off</option>
+    </select>
   </div> 
   <!--关于面板end-->
 
@@ -50,18 +85,126 @@
 	
   <div data-role="main" class="ui-content">
   	<!--公告 start-->
-  	<a href="#myPopup" data-rel="popup" class="ui-btn ui-icon-audio ui-btn-icon-left "  data-transition="flow" data-position-to="window">公告</a>
-  	<div data-role="popup" id="myPopup" class="ui-content">
+  	<a href="#gonggaoPopup" data-rel="popup" class="ui-btn ui-icon-audio ui-btn-icon-left "  data-transition="flow" data-position-to="window">公告</a>
+  	<div data-role="popup" id="gonggaoPopup" class="ui-content">
       <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">关闭</a>
        <p style="text-align: center;">welcome to eyunzhu</p>
       <p><b>提示:</b> 看电影到免费VIP影视网</p>
       <a href="http://video.eyunzhu.com" target="_blank" class="ui-btn">点此进入</a>
     </div>
     <!--公告 end-->
- 	<div id="windowWidth"></div><br /><br /><br />
-    <h1 style="text-align: center;">敬请期待！</h1>
+ 	<div id="windowWidth"></div>
+	<div data-role="controlgroup" data-type="horizontal">
+      <a href="#loginPopup" data-rel="popup" class="ui-btn" data-transition="flow" data-position-to="window">登陆</a>
+      <a href="#registerPopup" data-rel="popup" class="ui-btn" data-transition="flow" data-position-to="window">注册</a>
+    </div><br>
+	
+	
+    <div data-role="popup" id="loginPopup" class="ui-content" style="min-width:300px;" data-overlay-theme="b">
+      <form method="post" action="loginJudge.php">
+        <div>
+          <h3 style="text-align:center">用户登录</h3>
+          <input type="text" name="lusername" id="lusername" placeholder="用户名">
+          <input type="password" name="lpswd" id="lpswd" placeholder="密码">
+          <label for="log">保存登录</label>
+          <input type="checkbox" name="login" id="log" value="1" data-mini="true">
+          <input type="submit" data-inline="true" value="登录">
+        </div>
+      </form>
+	</div>
+	
+	<div data-role="popup" id="registerPopup" class="ui-content" style="min-width:300px;" data-overlay-theme="b">
+      <form method="post" action="register.php">
+        <div>
+          <h3 style="text-align:center">用户注册</h3>
+          <input type="text" name="rusername" id="rusername" placeholder="用户名">
+          <input type="password" name="rpswd" id="rpswd" placeholder="密码">
+          <input type="password" name="rpswd1" id="rpswd1" placeholder="重复密码">
+		  <input type="text" name="rname" id="rname" placeholder="昵称">
+		  <legend>请选择您的性别：</legend>
+          <label for="male">男性</label>
+          <input type="radio" name="gender" id="male" value="male" >
+          <label for="female">女性</label>
+          <input type="radio" name="gender" id="female" value="female"> 
+          <label for="points">年龄:</label>
+      		<input type="range" name="points" id="points" value="20" min="16" max="100">
+      
+          <input type="submit" data-inline="true" value="注册">
+          <input type="reset" data-inline="true" value="重置">
+        </div>
+      </form>
+	</div>
+    
+    
+      <div class="article-li">
+        <img src="http://file.eyunzhu.com/img/tx/001.jpg" />
+        <div class="article-li-text">
+        	<a href="http://eyunzhu.com/348.html" target="_blank">
+        		<p>新手网站搭建详细教程</p>
+        	</a>	
+        	小白教程，老司机就不用看啦，2333 相信有很多小伙伴想搭建自己的网站，然而可能不知如何下手，接下来博主将详细的给大家讲解，绝对适用于新手（个人见解，如有错误感谢指.... 原文出自[忆云竹] 转载请保留原文链接: http://eyunzhu.com/
+        </div>        
+      </div>
+      <div class="article-li">
+        <img src="http://file.eyunzhu.com/img/tx/001.jpg" />
+        <div class="article-li-text">
+        	<a href="http://eyunzhu.com/348.html" target="_blank">
+        		<p>新手网站搭建详细教程</p>
+        	</a>	
+        	小白教程，老司机就不用看啦，2333 相信有很多小伙伴想搭建自己的网站，然而可能不知如何下手，接下来博主将详细的给大家讲解，绝对适用于新手（个人见解，如有错误感谢指.... 原文出自[忆云竹] 转载请保留原文链接: http://eyunzhu.com/
+        </div>        
+      </div>
+      <div class="article-li">
+        <img src="http://file.eyunzhu.com/img/tx/001.jpg" />
+        <div class="article-li-text">
+        	<a href="http://eyunzhu.com/348.html" target="_blank">
+        		<p>新手网站搭建详细教程</p>
+        	</a>	
+        	小白教程，老司机就不用看啦，2333 相信有很多小伙伴想搭建自己的网站，然而可能不知如何下手，接下来博主将详细的给大家讲解，绝对适用于新手（个人见解，如有错误感谢指.... 原文出自[忆云竹] 转载请保留原文链接: http://eyunzhu.com/
+        </div>        
+      </div>
+      <div class="article-li">
+        <img src="http://file.eyunzhu.com/img/tx/001.jpg" />
+        <div class="article-li-text">
+        	<a href="http://eyunzhu.com/348.html" target="_blank">
+        		<p>新手网站搭建详细教程</p>
+        	</a>	
+        	小白教程，老司机就不用看啦，2333 相信有很多小伙伴想搭建自己的网站，然而可能不知如何下手，接下来博主将详细的给大家讲解，绝对适用于新手（个人见解，如有错误感谢指.... 原文出自[忆云竹] 转载请保留原文链接: http://eyunzhu.com/
+        </div>        
+      </div>
+      <div class="article-li">
+        <img src="http://file.eyunzhu.com/img/tx/001.jpg" />
+        <div class="article-li-text">
+        	<a href="http://eyunzhu.com/348.html" target="_blank">
+        		<p>新手网站搭建详细教程</p>
+        	</a>	
+        	小白教程，老司机就不用看啦，2333 相信有很多小伙伴想搭建自己的网站，然而可能不知如何下手，接下来博主将详细的给大家讲解，绝对适用于新手（个人见解，如有错误感谢指.... 原文出自[忆云竹] 转载请保留原文链接: http://eyunzhu.com/
+        </div>        
+      </div>
+      <div class="article-li">
+        <img src="http://file.eyunzhu.com/img/tx/001.jpg" />
+        <div class="article-li-text">
+        	<a href="http://eyunzhu.com/348.html" target="_blank">
+        		<p>新手网站搭建详细教程</p>
+        	</a>	
+        	小白教程，老司机就不用看啦，2333 相信有很多小伙伴想搭建自己的网站，然而可能不知如何下手，接下来博主将详细的给大家讲解，绝对适用于新手（个人见解，如有错误感谢指.... 原文出自[忆云竹] 转载请保留原文链接: http://eyunzhu.com/
+        </div>        
+      </div>
+      <div class="article-li">
+        <img src="http://file.eyunzhu.com/img/tx/001.jpg" />
+        <div class="article-li-text">
+        	<a href="http://eyunzhu.com/348.html" target="_blank">
+        		<p>新手网站搭建详细教程</p>
+        	</a>	
+        	小白教程，老司机就不用看啦，2333 相信有很多小伙伴想搭建自己的网站，然而可能不知如何下手，接下来博主将详细的给大家讲解，绝对适用于新手（个人见解，如有错误感谢指.... 原文出自[忆云竹] 转载请保留原文链接: http://eyunzhu.com/
+        </div>        
+      </div>
+      
+      
+    
+    
   </div>
-
+<br /><br /><br />
    <div data-role="footer" data-position="fixed" data-fullscreen="true">
     <div data-role="navbar" >
 	  <ul>
@@ -75,10 +218,10 @@
 </div> 
 
 <div data-role="page" id="comment">
-  <div data-role="header">
+  <div data-role="header" data-position="fixed" data-fullscreen="true">
      <h1>社区</h1>
      <!--<a href="#iframe" data-rel="popup" class="ui-btn ui-btn-right ui-corner-all ui-shadow ui-icon-star ui-btn-icon-left">主页</a>-->
-  </div>
+  </div><br /><br />
   	
   <div data-role="main" class="ui-content">
   	<table data-role="table" data-mode="columntoggle" class="ui-responsive" id="myTable" border="1px" data-column-btn-text="选择显示">
@@ -119,7 +262,7 @@
       </tbody>
     </table>
   </div>
-
+	<br /><br /><br />
    <div data-role="footer" data-position="fixed" data-fullscreen="true">
     <div data-role="navbar" >
 	  <ul>
@@ -133,9 +276,9 @@
 </div>
 
 <div data-role="page" id="grid">
-  <div data-role="header">    
+  <div data-role="header" data-position="fixed" data-fullscreen="true">    
     <h1>更多</h1>    
-  </div>  
+  </div>  <br /><br />
 	
   <div data-role="main" class="ui-content">
   	
@@ -152,7 +295,7 @@
       <li data-filtertext="主机 host 服务器 空间"><a href="http://host.eyunzhu.com" target="_blank">host.eyunzhu.com 主机空间</a></li>
     </ul>
   </div>
-  
+  <br /><br /><br />
    <div data-role="footer" data-position="fixed" data-fullscreen="true">
     <div data-role="navbar" >
 	  <ul>
@@ -166,9 +309,9 @@
 </div>
 
 <div data-role="page" id="user">
-  <div data-role="header">
+  <div data-role="header" data-position="fixed" data-fullscreen="true">
     <h1>资料</h1>
-    </div>
+    </div><br /><br />
   
 	
   <div data-role="main" class="ui-content" style="text-align: center;">
@@ -193,7 +336,7 @@
 	</div>
     
   </div>
-
+	<br /><br /><br />
    <div data-role="footer" data-position="fixed" data-fullscreen="true">
     <div data-role="navbar" >
 	  <ul>
@@ -205,7 +348,6 @@
 	</div>
   </div>
 </div>
-
 
 </body>
 </html>
